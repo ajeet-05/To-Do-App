@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager · Predev</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="app-container">
+
+        <header class="app-header">
+            <span class="time-display">9:41</span>
+            <div class="greeting-block">
+                <span class="greeting-name">Hello Predev!</span>
+                <span class="greeting-time">Good Morning</span>
+            </div>
+        </header>
+
+        <section class="card today-card">
+            <div class="today-text">
+                You've to complete <strong id="taskCount">0</strong> tasks today.
+            </div>
+            <div class="counter-row">
+                <div class="counter-item tasks-counter">
+                    <span class="counter-number">Tasks (<span id="totalTasks">0</span>)</span>
+                </div>
+                <div class="counter-item reminders-counter">
+                    <span class="counter-number">Reminders (<span id="totalReminders">0</span>)</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="week-row">
+            <span class="week-date">Monday 16 Jan, 2023</span>
+            <div class="week-days">
+                <span class="day active">Tue</span>
+                <span class="day">Wed</span>
+                <span class="day">Thu</span>
+                <span class="day">Fri</span>
+                <span class="day">Sat</span>
+                <span class="day">Sun</span>
+            </div>
+        </div>
+
+        <button class="add-task-btn" id="addTaskBtn">+ Add New Task</button>
+
+        <!-- task list -->
+        <div class="task-list" id="taskList">
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <span class="empty-icon">📋</span>
+            <p>No tasks yet. Click "Add New Task" to get started!</p>
+        </div>
+
+        <div class="fab-hint">✨ tap a task to mark complete</div>
+
+    </div>
+
+    <div class="modal-overlay" id="taskModal">
+        <div class="modal-content">
+            <h3>Add New Task</h3>
+            <form id="taskForm">
+                <input type="text" id="taskTitleInput" placeholder="Task title" required />
+                <textarea id="taskDescInput" placeholder="Task description (optional)" rows="3"></textarea>
+                <div class="modal-actions">
+                    <button type="button" class="modal-cancel" id="cancelModal">Cancel</button>
+                    <button type="submit" class="modal-submit">Add Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toastMessage" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
